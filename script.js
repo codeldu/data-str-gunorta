@@ -20,13 +20,124 @@ const restoran = {
             close : '23:00'
         }},
         order : function(starterInd, mainIndex){
+            console.log("Function ishleyir");
             return [ this.starterMenu[starterInd], this.mainMenu[mainIndex] ]
         },
         
         delivery : ({name, number = "Nomre qeyd olunmayib", address, order}) => {
             console.log(`${name} adli mushteri ${order} sifarish etdi, unvan : ${address}, telefon : ${number}`);
-        }
+        },
+        cook : function(ing1, ing2, ing3){
+            console.log(`Menim pizzamin mehsullari ${ing1}, ${ing2} ve ${ing3}-dur`);
+        },
+        cook2 : function(mainIng, ...others ){
+            console.log(`Menim pizzamin esas mehsulu ${mainIng}-dir, digerleri ise ${others}-dir`);
+        },
+        guests : 0
+
    }
+
+//  console.log(restoran.order(1,2)) ||  restoran.order(1,2) 
+
+// restoran.order && restoran.order(1,3);
+
+
+const person1 = {
+    name : "Huseynagha",
+    age : 0,
+    // friend : "Mahsun"
+}
+
+const person2 = {
+    name : "Samir",
+    age : 21,
+    friend : "Mahsun"
+}
+
+
+
+
+// person1.friend = person1.friend && "Anonimm"
+person1.friend &&= "Anonim"
+
+console.log(person1);
+
+
+//    let numGuest;
+
+//    if(restoran.guests){
+//     numGuest = restoran.guests
+//    }else{
+//     numGuest = 15
+//    }
+
+//    let numGuest = restoran.guests ? restoran.guests : 15;
+//    let numGuest2 = restoran.guests ?? 15;
+
+//    console.log(numGuest2);
+
+
+
+// restoran.cook2("Pendir",'pomidor','zeytun', 'Huseynagha', '')
+
+// function sum(nums){
+//     console.log(nums);
+//     let total = 0;
+//     nums.forEach((item)=> total+=item)
+//     return total;
+// }
+
+// const x = [2,6,8,9]
+
+// console.log(sum(...x));
+   
+
+// Rest Pattern ve ya Rest Operator (...)
+
+// let arr = [2,3]
+
+
+
+// console.log(firstMeal, secondMeal);
+
+///   rest           spread
+// let [a, ...other] = [1,4, ...arr]
+
+
+// let [a, ...others] = [1,2,3,4,5]
+
+// console.log(a);
+// console.log(typeof others);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    let mehsullar = ["pendir", "pomidor", "zeytun"]
+//    restoran.cook(...mehsullar);
+
+
+// let person = {study: "LDU", group: "Code"};
+
+// let person1 = {...person};
+
+// person1.study = "BDU";
+
+// console.log(person1);
+
 
 
 //    let newMenu = [...restoran.starterMenu, "Pomidor"];
@@ -36,15 +147,15 @@ const restoran = {
 
 //    console.log(newMenu);
 
-let first = ["Nail", "Nihad"];
+// let first = ["Nail", "Nihad"];
 
-let second = [...first];
+// let second = [...first];
 
-// second.push("Mahsun")
+// // second.push("Mahsun")
 
-second = [...second, "Mahsun"]
+// second = [...second, "Mahsun"]
 
-console.log(first, second);
+// console.log(first, second);
 
 
 //    let deliverOne = {
@@ -143,20 +254,31 @@ console.log(first, second);
 // console.log(mixed);
 
 
-let myData;
+// let myData;
 
-let showdata =  async function(){
+// let showdata =  async function(){
 
-    let response = await fetch('https://northwind.now.sh/api/categories')
+//     let response = await fetch('https://northwind.now.sh/api/categories')
 
-    myData = await response.json()
-    console.log(myData);
-
-
-}
-showdata();
-
-console.log(myData);
+//     myData = await response.json()
+//     console.log(myData);
 
 
+// }
+// showdata();
 
+// console.log(myData);
+
+//   -- || or operatoru hemishe duzgun olani axtarir, birinci true deyeri geri
+//gonderir. eger ki, true deyer yoxdursa, son elementi qaytarir
+//   -- && and operatoru hemishe sehv olani axtarir, birinci tapdigi false de
+//yeri geri gonderir. eger false deyer yoxdursa sonuncunu qaytarir 
+
+
+
+
+// let number = 5;
+
+// if ( 5 && 0 ){
+//     console.log("aaaaa");
+// }
